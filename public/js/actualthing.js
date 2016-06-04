@@ -3,19 +3,28 @@ var productos = [
 	{"nombre": "tomate", "descripcion": "muuuy fresco"}
 ];
 
+function isEmpty(str) {
+    return (!str || 0 === str.length);
+}
+
 function send(){
 	var nombre = $("#nombre").val();
 	var descripcion = $("#descripcion").val();
-	productos.push({"nombre": nombre, "descripcion": descripcion});
+	if(!isEmpty(nombre)) {
+		productos.push({"nombre": nombre, "descripcion": descripcion});
+		$("#warning").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>'+"Bien!"+'</strong> '+"Producto agregado correctamente."+'</div>');
+	}
+	else $("#warning").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>'+"Error!"+'</strong> '+"El nombre del producto que has puesto no significa nada."+'</div>');
 	update();
 }
 
 function set(i){
 	var nombre = $("#nuevonombre"+i+10).val();
 	var descripcion = $("#nuevadescripcion"+i+10).val();
-	if(nombre!=="" || !nombre===null){
+	if(!isEmpty(nombre)){
 		productos[i].nombre = nombre;
 		productos[i].descripcion = descripcion;
+		$("#warning").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>'+"Bien!"+'</strong> '+"Producto editado correctamente."+'</div>');
 	}
 	update();
 }
