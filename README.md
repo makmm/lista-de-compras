@@ -1,8 +1,10 @@
 # lista-de-compras
-:)
-## Correr
-Suponiendo que estas en Mac OS X/Linux,
+Un README muuuy decente <3
+## Instalar dependencias
 ```
 $ npm install
-$ npm start
+```
+## Correr
+```
+$ node index.js
 ```
