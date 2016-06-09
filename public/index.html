@@ -2,11 +2,20 @@
 <html>
 	<head>
 		<title>actualthing</title>
-		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="js/jquery.min.js"></script>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/actualthing.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/actualthing.css">
+		<script src="js/handlebars.js"></script>
+		<script src="js/master.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/master.css">
+		<script id="Alert" type="text/x-handlebars-template">
+			<div class="alert alert-{{type}} alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<strong>{{title}}</strong> {{message}}
+			</div>
+		</script>
 	</head>
 	<body>
 		<div id="myModal" class="modal fade" role="dialog">
@@ -28,13 +37,13 @@
 		</div>
 		<div id="lista">
 			<div id="warning">
-				
+
 			</div>
 			<div class="btn-group" role="group" aria-label="...">
 				<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Añadir nuevo producto</button>
 			</div>
 			<ul class="list-group">
-				
+
 			</ul>
 		</div>
 	</body>
